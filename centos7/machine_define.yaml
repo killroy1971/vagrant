@@ -1,0 +1,9 @@
+---
+- name: centos7
+  box: centos7.2
+  boxurl: "http://192.168.4.11:20001/centos7/centos7.json"
+  nettype: private_network
+  ip: 192.168.100.10
+  subnet: vboxnet0
+  ram: 512
+

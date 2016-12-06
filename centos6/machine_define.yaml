@@ -1,0 +1,9 @@
+---
+- name: centos6
+  box: centos6.8
+  boxurl: "http://192.168.4.11:20001/centos6/centos6.json"
+  ip: 192.168.100.10
+  nettype: private_network
+  subnet: vboxnet0
+  ram: 512
+
