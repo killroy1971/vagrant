@@ -1,4 +1,4 @@
-#Vagarnt Basebox Repository
+#Vagrant Basebox Repository
 
 This repository holds files that I've created to facilitate DIY 
 Vagrant base boxes.  I'm currently focusing on centos 6 and 7.
