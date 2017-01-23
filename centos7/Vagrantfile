@@ -11,11 +11,11 @@ require 'yaml'
 # Read YAML file with box details
 machines = YAML.load_file(File.join(File.dirname(__FILE__), 'machine_define.yaml'))
  
-# Don't repalce the Vagrant insecure public key
-config.ssh.insert_key = false
- 
 # Create boxes
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+# Don't repalce the Vagrant insecure public key
+  config.ssh.insert_key = false
  
   # Iterate through entries in YAML file
   machines.each do |servers|
