@@ -63,7 +63,7 @@ fi
 # Clean up /tmp and /var/tmp
 /bin/rm -f /tmp/*
 /bin/rm -Rf /tmp/yum*
-/bin/rm -f /var/tmp/*
+/bin/rm -Rf /var/tmp/*
 
 # Reset vagrant's authorized_keys file
 cp -f /root/vagrant_insecure.pub /home/vagrant/.ssh/authorized_keys
