@@ -1,16 +1,16 @@
 ---
 - name: centos7
-  box: centos7.3
-  boxurl: "http://192.168.4.11:20001/centos7/centos7.json"
+  box: centos7
+  boxurl: "file:///Users/glenn/Learn/Vagrant/Boxes/centos7/centos7.json"
   nettype: private_network
   ip: 192.168.100.10
   subnet: vboxnet0
   ram: 512
 
 - name: centos6
-  box: centos6.8
-  boxurl: "http://192.168.4.11:20001/centos6/centos6.json"
-  ip: 192.168.100.10
+  box: centos6
+  boxurl: "file:///Users/glenn/Learn/Vagrant/Boxes/centos6/centos6.json"
+  ip: 192.168.100.11
   nettype: private_network
   subnet: vboxnet0
   ram: 512
