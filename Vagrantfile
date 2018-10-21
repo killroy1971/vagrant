@@ -22,9 +22,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Iterate through entries in YAML file
   machines.each do |servers|
     config.vm.define servers["name"] do |srv|
-      srv.vm.box = servers["box"]
-      srv.vm.box_check_update = true
-      srv.vm.box_url = servers["boxurl"]
+      if srv.vm.box_url == ""
+				srv.vm.box = servers["box"]
+      else
+				srv.vm.box = servers["box"]
+				srv.vm.box_url = servers["boxurl"]
+      end
+			srv.vm.box_check_update = true
       if servers["nettype"] == "private_network"
         srv.vm.network "private_network", ip: servers["ip"], name: servers["subnet"]
       elsif servers["nettype"] == "public"
@@ -35,6 +39,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       srv.vm.provider :virtualbox do |vb|
         vb.name = servers["name"]
         vb.memory = servers["ram"]
+      end
+      srv.vm.provision "ansible" do |a|
+        a.playbook = "provision.yml"
+        a.verbose = "v"
+        a.host_key_checking = false
+        a.extra_vars = { ansible_ssh_user: 'vagrant' }
+        a.become = true
       end
     end
   end

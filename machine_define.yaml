@@ -15,3 +15,11 @@
   subnet: vboxnet0
   ram: 512
 
+- name: rhel7
+  box: rhel7
+  boxurl: "file:///Users/glenn/Learn/Vagrant/Boxes/rhel7/rhel7_0.1.box"
+  nettype: private_network
+  ip: 192.168.100.12
+  subnet: vboxnet0
+  ram: 2048
+

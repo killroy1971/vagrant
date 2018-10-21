@@ -1,0 +1,22 @@
+---
+- name: VAGRANT | Provision OS
+  hosts: all
+  vars:
+    dns_server: 
+      - 192.168.4.10
+    dns_search: "gshome.lan vagrantup.com"
+    satellite_register: false
+    rhn_register: true
+    rhel_default_server: true
+    rhel_ocp_server: false
+    rhel_gluster_server: false
+    rhel_rhv_server: false
+    rhel_satellite_server: false
+    rhel_capsule_server: false
+    epel: true
+    ansible_server: false
+    static_ipaddr: false
+  roles:
+    - common
+    - virtualbox_guest_build
+
